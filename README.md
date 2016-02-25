@@ -1,5 +1,8 @@
-# mount_s3
+# Fuseとs3fsを使ってCentOSからマウントさせる
+
 ### Mac上のローカルVMからs3へマウントする方法
+ - VirtualBox
+ - CentOS6.7
 
 #### s3コンソールで設定
  - s3 IAMでs3接続するためのユーザを作成
