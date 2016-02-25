@@ -6,6 +6,7 @@
  
 #### Linux側での設定
 ```
+-- fuse download&install --
 # yum -y update
 # yum -y groupinstall "Development Tools" 
 # yum -y install openssl-devel 
@@ -20,4 +21,16 @@
 # make install
 # ldconfig
 # modprobe fuse
+
+-- s3fs download&install --
+# cd/usr/local/src
+# git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+# cd s3fs-fuse/
+# ./autogen.sh
+# make
+# make install
+
+-- s3fs setting --
+# echo '(Access Key ID):(Secret Access Key)' > /etc/passwd-s3fs
+
 ```
