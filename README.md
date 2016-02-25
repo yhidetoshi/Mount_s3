@@ -5,4 +5,9 @@
  - s3 IAMでs3接続するためのユーザを作成
  
 #### Linux側での設定
-> yum -y groupinstall "Development Tools" 
+```
+yum -y update
+yum -y groupinstall "Development Tools" 
+yum -y install openssl-devel 
+yum -y install libcurl-devel 
+```
