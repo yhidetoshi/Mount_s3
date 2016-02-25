@@ -34,14 +34,17 @@
 # make install
 # whereis s3fs
 
--- s3fs setting --
+-- s3fs setting (/mnt/s3にマウントする場合)--
 # echo 'Access Key ID:Secret Access Key' > /etc/passwd-s3fs
  → Access Key ID と Secret Access KeyはAWSコンソールのIAMから参照
 # chmod 640 /etc/passwd-s3fs
-# s3fs s3-mount-yajima /mnt/s3/ -o allow_other,default_acl=private-read
+# s3fs <バケット名> /mnt/s3/ -o allow_other,default_acl=private-read
  → マウント時にこのエラーができたら下記の2行を実施<library too old, some operations may not not work>
  1: # yum erase fuse-devel fuse-libs
  2: # fusermount -u /mnt/s3
+
+再度マウントを実行
+# s3fs <bucket_name> /mnt/s3/ -o allow_other,default_acl=private-read
 ```
 
  - ファイルシステムを見てるみと
@@ -53,4 +56,9 @@ Filesystem            Size  Used Avail Use% Mounted on
 tmpfs                 372M   76K  372M   1% /dev/shm
 /dev/sda1             477M   70M  382M  16% /boot
 s3fs                  256T     0  256T   0% /mnt/s3
+```
+
+- OS再起動しても自動マウントさせるためにfstabに書き込む
+```
+s3fs#<bucket名>      /mnt/s3                 fuse allow_other,default_acl=private-read-write 0 0
 ```
