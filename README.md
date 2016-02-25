@@ -27,8 +27,6 @@
 # mkdir /mnt/s3
 # git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 # yum -y install gcc-c++ fuse fuse-devel libcurl-devel libxml2-devel  openssl-devel
-# yum erase fuse-devel fuse-libs
-# fusermount -u /mnt/s3
 
 # cd s3fs-fuse/
 # ./configure --prefix=/usr
@@ -41,6 +39,9 @@
  → Access Key ID と Secret Access KeyはAWSコンソールのIAMから参照
 # chmod 640 /etc/passwd-s3fs
 # s3fs s3-mount-yajima /mnt/s3/ -o allow_other,default_acl=private-read
+ → マウント時にこのエラーができたら下記の2行を実施<library too old, some operations may not not work>
+ 1: # yum erase fuse-devel fuse-libs
+ 2: # fusermount -u /mnt/s3
 ```
 
  - ファイルシステムを見てるみと
