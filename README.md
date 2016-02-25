@@ -4,7 +4,7 @@
 #### s3コンソールで設定
  - s3 IAMでs3接続するためのユーザを作成
  
-#### Linux側での設定
+#### Linux側(Client)での設定
 ```
 -- fuse download&install --
 # yum -y update
