@@ -60,5 +60,5 @@ s3fs                  256T     0  256T   0% /mnt/s3
 
 - OS再起動しても自動マウントさせるためにfstabに書き込む
 ```
-s3fs#<bucket名>      /mnt/s3                 fuse allow_other,default_acl=private-read-write 0 0
+s3fs#<bucket_name>      /mnt/s3               fuse    defaults        0 0
 ```
