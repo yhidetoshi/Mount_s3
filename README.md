@@ -1,4 +1,4 @@
-# Fuseとs3fsを使ってCentOSからマウントさせる
+# Fuseとs3fsを使ってs3にマウントする
 
 ### Mac上のローカルVMからs3へマウントする方法
  - VirtualBox
